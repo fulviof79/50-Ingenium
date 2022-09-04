@@ -1,0 +1,280 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{BasicPackages}[2022/06/07]
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english,italian] {babel}
+
+
+\RequirePackage{amsmath,amsthm,amssymb} %simboli matematici
+\RequirePackage{siunitx} % unità di misura
+
+\RequirePackage{xfrac}% per \sfrac
+
+%% Messa in pagina
+%\RequirePackage{geometry}
+%\setlength{\parindent}{0cm} % fixe à 0 l'indentation (la supprime)
+
+
+%% Comandi
+%Vettori
+
+\NewDocumentCommand{\vvec}{ >{\SplitArgument{2}{,}} m }{\printvec#1}
+\NewDocumentCommand{\printvec}{mmm}{\begin{pmatrix}#1 \\ #2 \IfValueT{#3}{\\#3} \end{pmatrix}}
+
+%Insiemi
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\DD}{\mathbb{D}}
+
+\newcommand{\isol}[1]{%
+   S=\left\lbrace  #1\checknextarg}
+\newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenextarg}{ \right\rbrace }}
+\newcommand{\gobblenextarg}[1]{;#1\@ifnextchar\bgroup{\gobblenextarg}{ \right\rbrace }}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\RequirePackage{hyperref}
+%\hypersetup{
+%    colorlinks,
+%    citecolor=black,
+%    filecolor=black,
+%    linkcolor=black,
+%    urlcolor=black
+%}
+
+%\RequirePackage{multicol}
+
+
+%\RequirePackage{pgf}
+%\RequirePackage{pgfplots}
+%\RequirePackage{tikz}
+%\usetikzlibrary{shapes,arrows,angles,quotes,intersections,babel}
+%\RequirePackage{tikz-dimline,datetime}
+%\RequirePackage{calc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% SIUNITX
+%\DeclareSIUnit\CHF{SFr.}
+%%\sisetup{locale = FR} % Tolto dopo discussione con Reto, meglio il . come separatore decimale
+%
+%
+
+%
+%\tikzstyle{decision} = [diamond, draw, text width=4.5em, 
+%                        text badly centered, node distance=2cm, 
+%                        inner sep=0pt]
+%\tikzstyle{block} = [rectangle, draw, text width=6em, 
+%                     text centered, rounded corners, 
+%                     minimum height=3em, node distance=4cm]
+%                     
+%\tikzstyle{bigblock} = [rectangle, draw, text width=6em, 
+%                     text centered, rounded corners, 
+%                     minimum height=6cm, node distance=4cm]
+%\tikzstyle{line} = [draw, -latex']
+%\tikzstyle{cloud} = [draw, ellipse, node distance=2.5cm, minimum height=2em]
+%\tikzstyle{blank} = [node distance=1cm]
+%
+%\tikzstyle{isometric}=[x={(0.710cm,-0.410cm)},y={(0cm,0.820cm)},z={(-0.710cm,-0.410cm)}]
+%\tikzstyle{manual}   =[x={(1cm,0cm)},y={(0cm,1cm)},z={(0.4cm,0.7cm)}]
+%\tikzstyle{dimetric} =[x={(0.935cm,-0.118cm)},y={(0cm,0.943cm)},z={(-0.354cm,-0.312cm)}]
+%\tikzstyle{std}   =[y={(1cm,0cm)},z={(0cm,1cm)},x={(-0.71cm,-0.71cm)}]
+%
+%\newcommand{\human}[3][1]{
+%\node[scale=#1] (#2) at (#3) {
+%\begin{tikzpicture}
+%\node[circle,fill,minimum size=5mm] (head) {};
+%\node[rounded corners=2pt,minimum height=1.3cm,minimum width=0.4cm,fill,below = 1pt of head] (body) {};
+%\draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+%\draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+%\draw[thick,white,-round cap] (body.south) --++(90:5.5mm);
+%\end{tikzpicture}};
+%}
+%
+%
+%% PAGE , PARAGRAPH STYLE
+%
+
+%
+%\pgfmathsetmacro{\PI}{3.141592654}% define precision of \pi % this is set here to the value of \pgfmathpi
+%
+%    \pgfmathdeclarefunction{gauss}{3}{%
+%  \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+%}
+%
+%
+%
+%% PGF and TIKZ
+%%\pgfplotsset{compat=1.13} 
+%\pgfplotsset{compat=1.16}
+%\usepgfplotslibrary{statistics}
+%\usepgflibrary{shapes.geometric}
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{intersections}
+%\usepgfplotslibrary{fillbetween}
+%
+%
+%\tikzset{declare function={cbrt(\x) =\x / abs(\x) *abs(\x)^(1/3);}}
+%
+%\tikzset{
+%cross/.style={
+%    thick,
+%    draw=gray,
+%    cross out,
+%    inner sep=0pt,
+%    minimum width=4pt,
+%    minimum height=4pt,
+%},
+%}
+%
+%\pgfplotsset{
+%	AxisDefaults/.style={
+%		axis lines=middle,
+%		xlabel=$x$, xlabel style={at=(current axis.right of origin), anchor=west},
+%		ylabel=$y$, ylabel style={at=(current axis.above origin), anchor=south},
+%		no markers,
+%		samples=101,
+%		every axis plot/.append style={
+%			thick,
+%			smooth,
+%		},
+%		ytick distance={1},
+%		xtick distance={1},
+%		grid=both,
+%		}
+%}
+%
+%\pgfplotsset{
+%	TinyAxisLabels/.style={
+%		yticklabel style={font=\tiny,xshift=0.5ex},
+%		xticklabel style={font=\tiny,yshift=0.5ex},	
+%		}
+%}
+%
+%\pgfplotsset{
+%	SmallAxisLabels/.style={
+%		yticklabel style={font=\small,xshift=0.5ex},
+%		xticklabel style={font=\small,yshift=0.5ex},	
+%		}
+%}
+%
+%
+%\pgfplotsset{     
+%	TrigDefaults/.style={
+%	trig format plots=rad,
+%        % scale x axis values by \pi and
+%        % remove the corresponding label
+%		scaled x ticks={real:\PI},
+%        xtick scale label code/.code={},
+%        % in case you want to set an explicit tick distance
+%        xtick distance=\PI/2,
+%        % add code here for formatting the `xlabels'
+%        % I configured exceptions for \pm\pi where no number in front
+%        % of these are shown and for fractional values these should be
+%        % shown as fractions
+%        xticklabel={%
+%            \ifdim \tick pt = 1 pt
+%                \strut$\pi$%
+%                \else\ifdim \tick pt = -1 pt
+%                    \strut$-\pi$%
+%                \else
+%                    % to avoid some mess with TeX precision, first
+%                    % round the \tick value to one digit after the comma
+%                    \pgfmathparse{round(10*\tick)/10}
+%                    % depending on whether the resulting number is an integer
+%                    % show it as integer only, otherwise use the style given
+%                    % in `xticklabel style'
+%                    \pgfmathifisint{\pgfmathresult}{%
+%                        \strut$\pgfmathprintnumber[int detect]{\pgfmathresult}\pi$%
+%                    }{%
+%                        \strut$\pgfmathprintnumber{\pgfmathresult}\pi$%
+%                    }
+%                \fi\fi
+%                },
+%            % set number plotting to frac style
+%            xticklabel style={
+%                /pgf/number format/frac,
+%                /pgf/number format/frac whole=false,
+%                },
+%		}
+%}
+%
+%
+%% tikz circle with center and radius% [draw options] (center) (initial angle:final angle:radius)
+%%\def\arccenter[#1](#2)(#3:#4:#5){\draw[#1]($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); } 
+%%\def\arccenter[#1](#2)(#3:#4:#5){\gdef\@arccenter{#1}{#2}{#3}{#4}{#5}}
+%%
+%%\def\@title{\@latex@error{No \noexpand\title given}\@ehc}
+%%\def\arccenter[#1](#2)(#3:#4:#5)%
+%%{\draw[#1]($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); } 
+%
+
+%
+%% IMAGES and INPUT PATH
+%
+%\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+%\def\input@path{{../DB/}{./DB/}{./}{../ch/}{./ex/}{./temi}{../temi}}  %pour les exercices
+%\graphicspath{{../DB/images/}{./images/}{./}{./img/}{../img/}{./temi/img/}{./tikz}{../tikz}} % pour le logo et les images des exercices
+%
+%
+%
+%
+%
+%\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%
+%
+%
+%% New version, circle too long to type
+%\newcommand{\pts}[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+%
+%
+
+%\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+%\newcolumntype{N}{@{}m{0pt}@{}}
+%
+%% Norme, length of a vector
+%%\newcommand\norm[1]{\left\lVert#1\right\rVert} %% Già definito nel pacchetto commath
+%
+%%
+%%\def\@centerarc[#1](#2)(#3:#4:#5){ % Syntax: [draw options] (center) (initial angle:final angle:radius)
+%%\draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+%
+%
+%\newenvironment{Tabular}[2][1]
+%  {\def\arraystretch{#1}\tabular{#2}}
+%  {\endtabular}
+%
+%
+
+%
+%
+%%%% Ensemble des solutions
+%
+
+%
+
+
+%
+%%%%%% COMANDI RETO %%%%
+%\providecommand{\dif}{\mathop{}\!\mathrm{d}}
+%\providecommand{\ii}{\mathop{}\!\mathrm{i}}
+%\providecommand{\dom}[1]{\mathop{}\!\mathrm{Dom}_{#1}}
+%\providecommand{\cod}[1]{\mathop{}\!\mathrm{Cod}_{#1}}
+%\providecommand{\immagine}[1]{\mathop{}\!\mathrm{Im}_{#1}}
+%\providecommand{\e}[1]{\times 10^{#1}}
+%\providecommand{\mcm}[1]{\mathop{}\!\mathrm{mcm}({#1})}
+%\providecommand{\MCD}[1]{\mathop{}\!\mathrm{MCD}({#1})}
+%%\providecommand{\ex}[1]{\mathop{}\!\mathrm{e}^{#1}}
+%\providecommand{\vd}[2]{\begin{bmatrix} {#1} \\ {#2} \end{bmatrix}}
+%\providecommand{\vt}[3]{\begin{bmatrix} {#1} \\ {#2} \\ {#3} \end{bmatrix}}
+%
+%\newcommand\updatesectfromfile{
+%\StrBefore*{\currfilebase}{-E-}[\secct]
+%\setcounter{section}{\secct}
+%\addtocounter{section}{-1}}
+
