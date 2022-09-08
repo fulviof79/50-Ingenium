@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{article} %1
+\usepackage[english,italian] {babel} %9
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{siunitx}
+%\setlength{\parindent}{0pt}
+%  Utilizzare % per commentare una riga
+
+% Definizione dell'autore dell'articolo
+\author{Fulvio Frapolli} %2
+%Definizione del titolo
+\title{Ingenium \LaTeX}%3
+%Definzizione della data
+\date{2022-2023} %4 compilare
+
+
+\begin{document}
+    
+\maketitle%5
+
+\tableofcontents %8
+\newpage %6
+
+\section{La mia prima sezione} %7
+
+Contenuto della mia sezione
+
+\section{Scrittura con elementi matematici}
+
+Necessita i pacchetti \verb |amsmath| e \verb|amssymb|
+
+Posso inserire scrittura matematica in una riga $x^2-\sqrt{3}=\frac{1}{3-x^4}$
+
+Rendere le frazioni più visibili  $\alpha \cdot  x^2-\sqrt{3}=\dfrac{1}{3-x^4}$
+
+Nuova riga e centrato 
+
+\[
+\frac{1}{a-\frac{1}{a+1}}    
+\]
+
+
+\[
+\underbrace{1+2+\dots+n}_%
+{=\frac{n(n+1)}{2}}
++(n+1)
+\]
+
+
+\section{Unità di misura}
+
+Caricare il pacchetto \verb|siunitx|
+
+\qty{23.4}{kg.m.s^{-2}} \\
+$r=\qty{0.8768(11)e-15}{m}$ \\
+\unit{\joule\per\mole\per\kelvin}\\
+\unit{j.mol^{-1}.K^{-1}}
+
+
+\qty{100}{\celsius} \\
+\ang{1;2;3}
+
+\end{document}

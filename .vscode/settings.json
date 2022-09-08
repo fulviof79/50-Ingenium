@@ -1,5 +1,5 @@
 {
-    "latex-workshop.latex.outDir": "%DIR%/tmp1",
+    "latex-workshop.latex.outDir": "%DIR%/tmp",
     "latex-workshop.latex.recipes": [
         {
           "name": "pdflatex",
