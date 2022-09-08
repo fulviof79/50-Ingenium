@@ -1,37 +1,34 @@
 {
-    "latex-workshop.latex.outDir": "%DIR%/tmp",
-    "latex-workshop.latex.recipes": [
+  "latex-workshop.latex.outDir": "%DIR%/tmp",
+  "latex-workshop.latex.recipes": [
+      {
+        "name": "pdflatex",
+        "tools": [
+          "pdflatex",
+          "copypdf",
+        ]
+      }],
+      "latex-workshop.latex.tools": [
         {
           "name": "pdflatex",
-          "tools": [
-            "pdflatex",
-            "copypdf",
+          "command": "pdflatex",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-output-directory=%OUTDIR%",
+            "--shell-escape",
+            "%DOC%"
+          ],
+          "env": {}
+        },
+        {
+          "name": "copypdf",
+          "command": "xcopy",
+          "args": [
+            "%OUTDIR_W32%\\%DOCFILE%.pdf",
+            "%DIR_W32%\\",
+            "/y"
           ]
-        }],
-
-        "latex-workshop.latex.tools": [
-          {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-output-directory=%OUTDIR%",
-              "--shell-escape",
-              "%DOC%"
-            ],
-            "env": {}
-          },
-
-          {
-            "name": "copypdf",
-            "command": "xcopy",
-            "args": [
-              "%OUTDIR_W32%\\%DOCFILE%.pdf",
-              "%DIR_W32%\\",
-              "/y"
-            ]
-          },
-        ]
+        },
+      ]
 }
-
