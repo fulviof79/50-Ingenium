@@ -5,6 +5,7 @@
         "name": "pdflatex",
         "tools": [
           "pdflatex",
+        
           "copypdf",
         ]
       }],
