@@ -1,0 +1,62 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}	% ascii 8 bit
+\usepackage{lmodern}		% latin modern
+\usepackage{siunitx}
+
+\title{Progetto 2}
+\author{Reto Ambrosini}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+\newpage
+
+	\tableofcontents
+
+\newpage
+
+\section{Prima sezione}
+
+Per scrivere un'equazione nel testo $ x=\frac{2a+3}{a-1} $ utilizzo il segno \$.
+Invece per scrivere un'equazione centrata si utilizza
+
+\[ x=\frac{2a+3}{a-1} \]
+
+oppure
+
+$$ \sin(x)=\frac{2a+3}{a-1} $$
+
+oppure ancora
+
+\begin{equation}
+	\sin(x)=\frac{2a+3}{a-1} 
+\end{equation}
+
+\vspace{\stretch{1}}
+
+\section[Due]{Seconda sezione}
+	
+Qui viene il testo della seconda sezione.
+Qui viene il testo della seconda sezione.
+Qui viene il testo della seconda sezione.
+Qui viene il testo della seconda sezione.
+
+\vspace{2mm}
+Qui viene il testo della seconda sezione.
+Qui viene il testo della seconda sezione.
+Qui viene il testo della seconda sezione.
+
+\vspace{\stretch{1}}
+
+\section*{Allegati}
+\addcontentsline{toc}{section}{Allegati}
+
+Qui viene il testo della seconda sezione.
+
+\vspace{\stretch{2}}
+
+\end{document}
