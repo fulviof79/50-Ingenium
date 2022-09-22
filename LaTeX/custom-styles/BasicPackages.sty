@@ -12,10 +12,10 @@
 
 %% Messa in pagina
 %\RequirePackage{geometry}
-%\setlength{\parindent}{0cm} % fixe à 0 l'indentation (la supprime)
+%\setlength{\parindent}{0cm} % indentazione a 0 per tutto il documento 
 
 
-%% Comandi
+%% Comandi personali
 %Vettori
 
 
@@ -30,10 +30,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\DD}{\mathbb{D}}
 
-\newcommand{\isol}[1]{%
-   S=\left\lbrace  #1\checknextarg}
-\newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenextarg}{ \right\rbrace }}
-\newcommand{\gobblenextarg}[1]{;#1\@ifnextchar\bgroup{\gobblenextarg}{ \right\rbrace }}
+
 
 
 
