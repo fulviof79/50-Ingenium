@@ -1,0 +1,36 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{BasicPackages}[2022/06/07]
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english,italian] {babel}
+
+
+\RequirePackage{amsmath,amsthm,amssymb} %simboli matematici
+\RequirePackage{siunitx} % unità di misura
+
+\RequirePackage{xfrac}% per \sfrac
+
+%% Messa in pagina
+%\RequirePackage{geometry}
+%\setlength{\parindent}{0cm} % indentazione a 0 per tutto il documento 
+
+
+%% Comandi personali
+%Vettori
+
+
+\NewDocumentCommand{\vvec}{ >{\SplitArgument{2}{,}} m }{\printvec#1}
+\NewDocumentCommand{\printvec}{mmm}{\begin{pmatrix}#1 \\ #2 \IfValueT{#3}{\\#3} \end{pmatrix}}
+
+%Insiemi
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\DD}{\mathbb{D}}
+
+
+
+
+
