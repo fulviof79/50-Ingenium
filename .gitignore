@@ -198,6 +198,9 @@ sympy-plots-for-*.tex/
 *.pytxcode
 pythontex-files-*/
 
+# python pre compiled
+*.pyc
+
 # tcolorbox
 *.listing
 
