@@ -6,7 +6,7 @@ import numpy as np
 
 
 def f(x):
-    return 3*x**3-2*x**2-x-3
+    return (x**2-2)/np.exp(x)-3
 
 derivative_precision=0.01
 def ndf(x):
