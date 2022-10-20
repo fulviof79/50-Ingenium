@@ -11,10 +11,17 @@ def f(x):
 def df(x):
     return 3*x**2-4*x+1
     
-xvalues= np.linspace(-1,3,100)
+#Plot
+#Plot parameter, 
+plot_xmin=-1
+plot_xmax=3
+total_points=1000
+
+xvalues= np.linspace(plot_xmin,plot_xmax,total_points)
 yvalues = f(xvalues)
 
-plt.axhline(0)
+plt.axhline(0, color='r')
+plt.axvline(0,color='r')
 plt.plot(xvalues,yvalues)
 
 plt.show()
