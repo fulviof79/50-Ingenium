@@ -24,6 +24,7 @@ delta=1e-10
 #range of initial guesses
 x_min=-5
 x_max=5
+max_iterations=100
 amount=100
 
 guess_range=np.linspace(x_min,x_max,amount)
@@ -31,7 +32,7 @@ guess_range=np.linspace(x_min,x_max,amount)
 roots=[]
 
 for guess in guess_range:
-    for n in range(100):
+    for n in range(max_iterations):
         if df(guess) !=0:
             next_guess = guess - f(guess)/df(guess)
         else:
