@@ -60,6 +60,7 @@ plt.bar(y_out,disc_area(radius,height,x_out),width=dx_out, color='red',alpha=0.2
 plt.bar(x_in,disc_area(radius,height,x_in),width=x_in[1], color='blue',alpha=0.2,align='edge')
 plt.plot(x,disc_area(radius,height,x), color='black')
 plt.scatter(x_out,disc_area(radius,height,x_out))
+plt.show()
 
 
 # %%
